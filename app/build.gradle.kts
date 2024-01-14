@@ -67,6 +67,11 @@ dependencies {
     implementation(libs.generativeai)
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
+
+    // room
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -42,10 +42,10 @@ class ChatViewModel @Inject constructor(
     }
 
     fun sendMessage() {
-        vmState.update { it.copy(message = "", sending = true) }
+        vmState.update { it.copy(sending = true) }
         viewModelScope.launch {
             chatRepository.send(vmState.value.message)
-            vmState.update { it.copy(sending = false) }
+            vmState.update { it.copy(sending = false, message = "") }
         }
     }
 

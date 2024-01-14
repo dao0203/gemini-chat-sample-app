@@ -9,5 +9,5 @@ interface ChatRepository {
         message: String,
     )
 
-    suspend fun observeAll(): Flow<List<Chat>>
+    fun observeAll(): Flow<List<Chat>>
 }

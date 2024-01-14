@@ -46,7 +46,7 @@ class ChatRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun observeAll(): Flow<List<Chat>> = flow {
+    override fun observeAll(): Flow<List<Chat>> = flow {
         chatEntityDao.observeAll().collect { emit(it.toChatList()) }
     }.flowOn(Dispatchers.IO)
 }

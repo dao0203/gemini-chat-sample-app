@@ -33,6 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.geminiapp.feature.chat.ChatScreen
 import com.google.ai.client.generativeai.GenerativeModel
 import com.example.geminiapp.ui.theme.GeminiAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -49,12 +50,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    val generativeModel = GenerativeModel(
-                        modelName = "gemini-pro",
-                        apiKey = BuildConfig.apiKey
-                    )
-                    val viewModel = SummarizeViewModel(generativeModel)
-                    SummarizeRoute(viewModel)
+                    ChatScreen()
                 }
             }
         }
